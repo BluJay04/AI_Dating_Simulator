@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #FFDEE3 0%, #FF8896 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.chat-main {
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: rgba(255, 222, 227, 0.9); /* #FFDEE3 with opacity */
+  border: 2px solid #FF3334;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(255, 51, 52, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.message-bubble {
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  animation: slideIn 0.3s ease-out;
+}
+
+.character1-message {
+  background-color: #FFBBC1;
+  border: 1px solid #FF6F77;
+  margin-right: auto;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.character2-message {
+  background-color: #FFDEE3;
+  border: 1px solid #FF8896;
+  margin-left: auto;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.judge-panel {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  background-color: rgba(255, 222, 227, 0.95);
+  border-left: 3px solid #FF3334;
+  padding: 1.5rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #FFDEE3;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #FF6F77;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #FF3334;
+}
